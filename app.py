@@ -1,3 +1,4 @@
+import os
 import random
 import sympy as sp
 import numpy as np
@@ -8,8 +9,12 @@ from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
 
-app.mount("/static", StaticFiles(directory="static"), name="static")
-templates = Jinja2Templates(directory="templates")
+# Projenin çalıştığı ana dizini dinamik olarak yakalıyoruz
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Klasör yollarını sunucuya göre dinamik olarak birleştiriyoruz
+app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
+templates = Jinja2Templates(directory=os.path.join(BASE_DIR, "templates"))
 
 x = sp.Symbol('x', real=True)
 
