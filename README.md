@@ -27,7 +27,7 @@ RandomAnalysis is a high-performance, modern web application built with **FastAP
       <img src="https://github.com/user-attachments/assets/a7173292-4060-4588-931b-ed275c0b242b" width="100%" alt="Dashboard"/>
     </td>
     <td width="50%" align="center">
-      <b>⚙️ Interactive Swagger API Docs</b><br/><br/>
+      <b>📊 Advanced View with Critical Points</b><br/><br/>
       <img src="https://github.com/user-attachments/assets/f40d01d1-acb4-460a-a21f-456d80cae7a7" width="100%" alt="API Documentation"/>
     </td>
   </tr>
