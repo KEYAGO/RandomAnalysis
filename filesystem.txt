@@ -1,0 +1,18 @@
+RandomFunctionGenerator\
+
+.	app.py
+.	README.md
+.	requirements.txt
+....functions\
+		functions.py
+....graphs\
+....static\
+........css\
+			style.css\
+		images\
+		js\
+			script.js\
+....templates\
+		index.html
+....venv\
+			

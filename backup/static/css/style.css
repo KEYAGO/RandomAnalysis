@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Her iki modda da sarsıntısız ve ortalanmış body düzeni */
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 2vw;
+    scrollbar-gutter: stable; /* Kaydırma çubuğu payını her zaman korur */
+}
+
+/* Advanced modda dikeyde uzayan ama yatayda ortalamayı asla bozmayan düzen */
+body.scrollable {
+    overflow-y: auto !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important; /* Yatayda tam ortalamayı korur */
+    padding: 4vh 2vw;
+}
+
+/* Ana Konteyner: margin: 0 auto ile her koşulda yatayda ortalanır */
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5vh;
+    margin: 0 auto; /* Blok düzenine geçilse bile tam ortada tutar */
+}
+
+body.scrollable .container {
+    height: auto;
+    gap: 3vh;
+}
+
+header {
+    text-align: center;
+    height: 6vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+body.scrollable header {
+    height: auto;
+    margin-bottom: 1vh;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: #0f172a;
+}
+
+header p {
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+/* Kontrol Paneli */
+.control-panel {
+    background: white;
+    height: 6vh;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #e2e8f0;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+body.scrollable .control-panel {
+    height: 8vh;
+    min-height: 60px;
+}
+
+.control-panel button {
+    color: white;
+    border: none;
+    padding: 0.4rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#generate-btn {
+    background-color: #2563eb;
+}
+
+#generate-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.secondary-btn {
+    background-color: #64748b;
+}
+
+.secondary-btn.active {
+    background-color: #8b5cf6 !important;
+}
+
+/* Çalışma Alanı */
+#workspace {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 82vh;
+    gap: 1.5vh;
+}
+
+body.scrollable #workspace {
+    height: auto;
+    gap: 3vh;
+}
+
+.visual-area {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+body.scrollable .visual-area {
+    height: auto;
+}
+
+/* Formül Alanı */
+.formula-display {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5vw;
+    height: 14vh;
+    margin-bottom: 2vh;
+    flex-shrink: 0;
+}
+
+body.scrollable .formula-display {
+    height: auto;
+    min-height: 120px;
+}
+
+.formula-card {
+    background: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid #e2e8f0;
+    border-top: 4px solid #cbd5e1;
+    overflow: hidden;
+    height: 100%;
+}
+
+.formula-display .formula-card:nth-child(1) { border-top-color: #1f77b4; }
+.formula-display .formula-card:nth-child(2) { border-top-color: #ff7f0e; }
+.formula-display .formula-card:nth-child(3) { border-top-color: #2ca02c; }
+
+.formula-card h3 {
+    font-size: 0.75rem;
+    color: #475569;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+}
+
+.formula-card .formula-render {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0f172a;
+    text-align: center;
+    width: 100%;
+    height: calc(100% - 1.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grafikler */
+#charts-wrapper {
+    display: grid;
+    gap: 1.5vw;
+    transition: all 0.3s ease;
+}
+
+/* Normal Mod */
+.charts-grid {
+    grid-template-columns: repeat(3, 1fr);
+    height: 59vh;
+}
+
+/* Advanced Mod */
+.charts-list {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    gap: 3vh !important;
+}
+
+.charts-list .chart-card {
+    height: 420px !important;
+}
+
+.chart-card {
+    background: white;
+    padding: 0.25rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.03);
+    border: 1px solid #e2e8f0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.chart {
+    width: 100%;
+    height: 100%;
+}
+
+/* Advanced Analiz Kartı */
+.analysis-card {
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 0.05);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+}
+
+.analysis-card h3 {
+    font-size: 1.1rem;
+    color: #0f172a;
+    margin-bottom: 1.2rem;
+    border-bottom: 2px solid #8b5cf6;
+    padding-bottom: 0.5rem;
+}
+
+.analysis-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #334155;
+}
+
+.analysis-item {
+    padding: 1rem;
+    background: #f8fafc;
+    border-left: 4px solid #cbd5e1;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.analysis-item.root { border-left-color: #ef4444; }
+.analysis-item.extrema { border-left-color: #f97316; }
+.analysis-item.inflection { border-left-color: #10b981; }
+
+.hidden {
+    display: none !important;
+}
