@@ -24,15 +24,17 @@ RandomAnalysis is a high-performance, modern web application built with **FastAP
   <tr>
     <td width="50%" align="center">
       <b>📊 Core Analytics Dashboard</b><br/><br/>
-      <img src="<img width="1582" height="832" alt="image" src="https://github.com/user-attachments/assets/a7173292-4060-4588-931b-ed275c0b242b" />" width="100%" alt="Dashboard"/>
+      <img src="https://github.com/user-attachments/assets/a7173292-4060-4588-931b-ed275c0b242b" width="100%" alt="Dashboard"/>
     </td>
     <td width="50%" align="center">
       <b>⚙️ Interactive Swagger API Docs</b><br/><br/>
-      <img src="<img width="874" height="906" alt="image" src="https://github.com/user-attachments/assets/f40d01d1-acb4-460a-a21f-456d80cae7a7" />" width="100%" alt="API Documentation"/>
+      <img src="https://github.com/user-attachments/assets/f40d01d1-acb4-460a-a21f-456d80cae7a7" width="100%" alt="API Documentation"/>
     </td>
-    <td width="50%" align="center">
-      <b>📊 Core Analytics Dashboard</b><br/><br/>
-      <img src="<img width="1596" height="562" alt="image" src="https://github.com/user-attachments/assets/5d7c0203-2699-4832-828c-d6adaa7e6e3b" />" width="100%" alt="Dashboard"/>
+  </tr>
+  <tr>
+    <td width="50%" align="center" colspan="2">
+      <br/><b>📊 Additional Analytics View</b><br/><br/>
+      <img src="https://github.com/user-attachments/assets/5d7c0203-2699-4832-828c-d6adaa7e6e3b" width="100%" alt="Dashboard View 2"/>
     </td>
   </tr>
 </table>
